@@ -1,1 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;600&display=swap');
 @import 'tailwindcss';
+
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+@layer base {
+	h1 {
+		@apply font-[Marcellus] text-[48px] leading-[58px] tracking-[0px] uppercase;
+	}
+	h2 {
+		@apply font-[Montserrat] text-[24px] leading-[29px] tracking-[0px] uppercase;
+	}
+	h3 {
+		@apply font-[Montserrat] text-[18px] leading-[20px] tracking-[0px] uppercase;
+	}
+	p {
+		@apply font-[Montserrat] text-[18px] leading-[20px] tracking-[0px];
+	}
+	button {
+		@apply font-[Montserrat] text-[18px] leading-[16px] tracking-[0px] uppercase;
+	}
+}
+
+@theme {
+	--color-primary: #dd013f;
+	--color-secondary: #081430;
+	--color-white: #ffffff;
+	--color-gray: #d3d3d3;
+	--color-darkblue: #081430;
+	--color-opacity: rgba(8, 20, 48, 0.65);
+}
