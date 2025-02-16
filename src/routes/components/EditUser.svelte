@@ -18,8 +18,8 @@
 		try {
 			await updateUser(user.id, updatedUser);
 			alert('User updated successfully!');
-			handleUpdateUser(updatedUser); // Call the parent callback
-			close(); // Close the modal after updating
+			handleUpdateUser(updatedUser);
+			close();
 		} catch (error) {
 			console.error('Error updating user:', error);
 			alert('Failed to update user!');
