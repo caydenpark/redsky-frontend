@@ -17,9 +17,8 @@
 
 	async function handleUpdate() {
 		try {
-			await updateUser(user.id, updatedUser);
-			toast.success(`${updatedUser.first_name} ${updatedUser.last_name}  updated successfully!`);
 			handleUpdateUser(updatedUser);
+			toast.success(`${updatedUser.first_name} ${updatedUser.last_name}  updated successfully!`);
 			close();
 		} catch (error) {
 			toast.error(`Error updating ${updatedUser.first_name} ${updatedUser.last_name}`);
