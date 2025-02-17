@@ -9,7 +9,6 @@
 		if (handleDeleteUser) {
 			handleDeleteUser(user.id);
 			toast.success(`${user.first_name} ${user.last_name} deleted!`);
-			displayToast();
 		}
 	}
 
