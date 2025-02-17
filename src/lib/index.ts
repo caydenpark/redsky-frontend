@@ -2,6 +2,7 @@ import type { User } from './types';
 
 const API_URL = 'http://localhost:3000';
 
+// Pull initial list of users
 export async function fetchUsers(): Promise<User[]> {
 	const res = await fetch(`${API_URL}/users`);
 	return res.json();

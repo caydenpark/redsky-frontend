@@ -1,14 +1,13 @@
 <script lang="ts">
 	import type { User } from '$lib/types';
 	import toast, { Toaster } from 'svelte-french-toast';
-	import { createUser } from '../../lib/index';
-	import { onMount } from 'svelte';
 
 	export let close: () => void;
 	export let on: { create: (newUser: any) => void };
 	export let handleCreateUser: (newUser: User) => void;
 
 	let newUser = {
+		id: 0,
 		avatar: '',
 		first_name: '',
 		last_name: '',

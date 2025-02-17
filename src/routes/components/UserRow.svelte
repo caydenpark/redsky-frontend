@@ -13,7 +13,9 @@
 	}
 
 	function handleEdit() {
-		openEditModal(user);
+		if (openEditModal) {
+			openEditModal(user);
+		}
 	}
 </script>
 
