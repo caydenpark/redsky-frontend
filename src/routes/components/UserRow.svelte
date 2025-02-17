@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { User } from '../../lib/types';
+	import toast, { Toaster } from 'svelte-french-toast';
 	export let user: User;
 	export let openEditModal: ((user: User) => void) | undefined;
 	export let handleDeleteUser: ((id: number) => void) | undefined;
@@ -7,6 +8,8 @@
 	function handleDelete() {
 		if (handleDeleteUser) {
 			handleDeleteUser(user.id);
+			toast.success(`${user.first_name} ${user.last_name} deleted!`);
+			displayToast();
 		}
 	}
 
@@ -14,6 +17,8 @@
 		openEditModal(user);
 	}
 </script>
+
+<Toaster />
 
 <tr class="border-gray border-t text-center">
 	<td class="p-2">

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { User } from '$lib/types';
+	import toast, { Toaster } from 'svelte-french-toast';
 	import { createUser } from '../../lib/index';
 	import { onMount } from 'svelte';
 
@@ -16,12 +17,15 @@
 
 	function handleSubmit() {
 		handleCreateUser(newUser);
+		toast.success(`${newUser.first_name} ${newUser.last_name} created successfully!`);
 	}
 
 	function closeModal(event: Event) {
 		close();
 	}
 </script>
+
+<Toaster />
 
 <h2 class="bg-primary p-4 text-white">Create New User</h2>
 <div class="p-6">
@@ -60,7 +64,7 @@
 		<div class="mb-4">
 			<label for="avatar" class="mb-2 block text-sm font-bold text-gray-700"><h3>Avatar</h3></label>
 			<input
-				type="text"
+				type="url"
 				id="avatar"
 				bind:value={newUser.avatar}
 				class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"

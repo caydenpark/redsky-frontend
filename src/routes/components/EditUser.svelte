@@ -1,4 +1,5 @@
 <script lang="ts">
+	import toast, { Toaster } from 'svelte-french-toast';
 	import { updateUser } from '../../lib/index';
 
 	export let user: {
@@ -17,12 +18,11 @@
 	async function handleUpdate() {
 		try {
 			await updateUser(user.id, updatedUser);
-			alert('User updated successfully!');
+			toast.success(`${updatedUser.first_name} ${updatedUser.last_name}  updated successfully!`);
 			handleUpdateUser(updatedUser);
 			close();
 		} catch (error) {
-			console.error('Error updating user:', error);
-			alert('Failed to update user!');
+			toast.error(`Error updating ${updatedUser.first_name} ${updatedUser.last_name}`);
 		}
 	}
 
@@ -31,6 +31,8 @@
 		dispatchEvent(event);
 	}
 </script>
+
+<Toaster />
 
 <h2 class="bg-primary p-4 text-white">Edit User</h2>
 <div class="p-6">
